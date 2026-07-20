@@ -26,7 +26,7 @@ class ArbolMerkle:
                 hijo_izquierdo = capa_actual[i]
                 hijo_derecho = capa_actual[i + 1]
                 
-                nodo_padre = NodoInterno(izquierdo=hijo_izquierdo, derecho=hijo_derecho)
+                nodo_padre = NodoInterno(hijoIzquierdo=hijo_izquierdo, hijoDerecho=hijo_derecho)
                 nueva_capa.append(nodo_padre)
 
             capa_actual = nueva_capa
@@ -34,4 +34,4 @@ class ArbolMerkle:
         return capa_actual[0]
 
     def obtener_raiz(self) -> str:
-        return self.raiz.hash_valor
+        return self.raiz.calcular_hash

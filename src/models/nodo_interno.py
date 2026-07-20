@@ -8,12 +8,12 @@ class NodoInterno(NodoInterfaz):
     hijoDerecho: NodoInterfaz
 
     @property
-    def esHoja(self) -> bool:
+    def es_hoja(self) -> bool:
         return False
     
     @property
-    def calcularHash(self) -> str:
-        hash_hijo_izquierdo = self.hijoIzquierdo.calcularHash()
-        hash_hijo_derecho = self.hijoDerecho.calcularHash()
+    def calcular_hash(self) -> str:
+        hash_hijo_izquierdo = self.hijoIzquierdo.calcular_hash
+        hash_hijo_derecho = self.hijoDerecho.calcular_hash
         concatenated_hashes = hash_hijo_izquierdo + hash_hijo_derecho
         return hashlib.sha256(concatenated_hashes.encode('utf-8')).hexdigest()

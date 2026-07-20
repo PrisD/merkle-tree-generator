@@ -7,9 +7,9 @@ class NodoHoja(NodoInterfaz):
     dato: str
 
     @property
-    def esHoja(self) -> bool:
+    def es_hoja(self) -> bool:
         return True
     
     @property
-    def calcularHash(self) -> str:
+    def calcular_hash(self) -> str:
         return hashlib.sha256(self.dato.encode('utf-8')).hexdigest()

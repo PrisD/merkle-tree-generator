@@ -2,13 +2,13 @@ from abc import ABC, abstractmethod
 
 """ Interfaz para los nodos del árbol de Merkle """
 
-class NodoInterface(ABC):
+class NodoInterfaz(ABC):
     @property
     @abstractmethod
-    def esHoja(self) -> bool:
+    def es_hoja(self) -> bool:
         pass
 
     @property    
     @abstractmethod
-    def calcularHash(self) -> str:
+    def calcular_hash(self) -> str:
         pass
