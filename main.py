@@ -8,8 +8,7 @@ def mostrar_menu():
     print("2. Mostrar árbol de Merkle")
     print("3. Consultar la raíz del árbol")
     print("4. Consultar el hash de un dato específico")
-    print("5. Mostrar todos los hashes del árbol")
-    print("6. Salir")
+    print("5. Salir")
 
 
 def crear_arbol():
@@ -45,7 +44,11 @@ def main():
             arbol_actual = crear_arbol()
 
         elif opcion == "2":
-            print("\n[Opción 2 - En desarrollo...]")
+            print("\n--- Estructura Gráfica del Árbol de Merkle ---")
+            if arbol_actual is None:
+                print("Primero debe crear un Árbol de Merkle (Opción 1).")
+            else:
+                print(arbol_actual.mostrar_grafico())
 
         elif opcion == "3":
             print("\n[Opción 3 - En desarrollo...]")
@@ -54,14 +57,11 @@ def main():
             print("\n[Opción 4 - En desarrollo...]")
 
         elif opcion == "5":
-            print("\n[Opción 5 - En desarrollo...]")
-
-        elif opcion == "6":
             print("\nSaliendo...")
             sys.exit(0)
 
         else:
-            print("Opción no válida. Ingrese un número entre 1 y 6.")
+            print("Opción no válida. Ingrese un número entre 1 y 5.")
 
 
 if __name__ == '__main__':

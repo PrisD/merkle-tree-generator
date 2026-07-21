@@ -17,3 +17,14 @@ class NodoInterno(NodoInterfaz):
         hash_hijo_derecho = self.hijoDerecho.calcular_hash
         concatenated_hashes = hash_hijo_izquierdo + hash_hijo_derecho
         return hashlib.sha256(concatenated_hashes.encode('utf-8')).hexdigest()
+    
+    def mostrar_grafico(self, prefijo: str = "", es_ultimo: bool = True) -> str:
+        conector = "└── " if es_ultimo else "├── "
+        hash_val = self.calcular_hash() if callable(self.calcular_hash) else self.calcular_hash
+        hash_corto = hash_val[:8]
+        resultado = f"{prefijo}{conector}🌿 [NODO INTERNO] Hash: {hash_corto}...\n"
+        nuevo_prefijo = prefijo + ("    " if es_ultimo else "│   ")
+        resultado += self.hijoIzquierdo.mostrar_grafico(nuevo_prefijo, es_ultimo=False)
+        resultado += self.hijoDerecho.mostrar_grafico(nuevo_prefijo, es_ultimo=True)
+
+        return resultado

@@ -12,3 +12,7 @@ class NodoInterfaz(ABC):
     @abstractmethod
     def calcular_hash(self) -> str:
         pass
+
+    @abstractmethod
+    def mostrar_grafico(self, prefijo: str = "", es_ultimo: bool = True) -> str:
+        pass

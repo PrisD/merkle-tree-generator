@@ -35,3 +35,6 @@ class ArbolMerkle:
 
     def obtener_raiz(self) -> str:
         return self.raiz.calcular_hash
+    
+    def mostrar_grafico(self) -> str:
+        return self.raiz.mostrar_grafico()
