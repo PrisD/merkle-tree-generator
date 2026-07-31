@@ -33,6 +33,7 @@ class ArbolMerkle:
 
         return capa_actual[0]
 
+    @property
     def obtener_raiz(self) -> str:
         return self.raiz.calcular_hash
     

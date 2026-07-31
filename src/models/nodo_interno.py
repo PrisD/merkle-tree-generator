@@ -20,8 +20,7 @@ class NodoInterno(NodoInterfaz):
     
     def mostrar_grafico(self, prefijo: str = "", es_ultimo: bool = True) -> str:
         conector = "└── " if es_ultimo else "├── "
-        hash_val = self.calcular_hash() if callable(self.calcular_hash) else self.calcular_hash
-        hash_corto = hash_val[:8]
+        hash_corto = self.calcular_hash[:8]
         resultado = f"{prefijo}{conector}🌿 [NODO INTERNO] Hash: {hash_corto}...\n"
         nuevo_prefijo = prefijo + ("    " if es_ultimo else "│   ")
         resultado += self.hijoIzquierdo.mostrar_grafico(nuevo_prefijo, es_ultimo=False)
